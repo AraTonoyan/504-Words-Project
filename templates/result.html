@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Game Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Word</th>
+                <th>Your Answer</th>
+                <th>Correct Definition</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for word, (user_answer, correct_definition) in results.items() %}
+            <tr>
+                <td>{{ word }}</td>
+                <td class="{{ 'Correct' if flag[word] else 'Incorrect' }}">{{ user_answer }}</td>
+                <td>{{ correct_definition }}</td>
+                <td class="{{ 'Correct' if flag[word] else 'Incorrect' }}">{{ 'Correct' if flag[word] else 'Incorrect' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html> 

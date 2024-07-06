@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Lesson {{ lesson_number }}</h1>
+    <form action="/result" method="post">
+        {% for item in words %}
+        <label for="{{ item[0] }}">{{ item[1] }}</label>
+        <input type="text" name="{{ item[0] }}" id="{{ item[0] }}" autocomplete="off"><br>
+        {% endfor %}
+        <input type="hidden" name="lesson" value="{{ lesson_number }}">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>

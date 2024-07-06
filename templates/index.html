@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Lesson</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Welcome to the Word Game!</h1>
+    <form action="/play" method="post">
+        <label for="lesson">Choose a lesson:</label>
+        <div class="buttonAndSelect">
+            <select name="lesson" id="lesson">
+                {% for lesson_number, _ in lessons.items() %}
+                <option value="{{ lesson_number }}">{{ lesson_number }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Start Game</button>
+        </div>
+    </form>
+    <div class="info_about_me">
+        <p>© 2024 Made By Ara. All rights reserved.</p>
+    </div>
+</body>
+
+</html>
