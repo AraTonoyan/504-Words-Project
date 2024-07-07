@@ -14,7 +14,7 @@ To use the application locally, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your_username/504-Words-Project.git
+   git clone [https://github.com/your_username/504-Words-Project.git](https://github.com/AraTonoyan/504-Words-Project.git)
    cd 504-Words-Project
 
 2. **Run the Application:**
